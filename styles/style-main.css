@@ -166,3 +166,23 @@ h {
   text-decoration: underline wavy 2px #554f4444;
   cursor: pointer;
 }
+
+@media (prefers-color-scheme: dark) {
+  ::selection {
+    background: #ffffff47;
+    color: #6B6B6B;
+  }
+  ::-moz-selection {
+    background: #ffffff47;
+    color: #6B6B6B;
+  }
+  body {
+    background: linear-gradient(125deg, #3f3f3a 0%, #37342c 100%);
+  }
+  .content {
+    filter: brightness(3);
+  }
+  .logo {
+    opacity: 0.1;
+  }
+}
