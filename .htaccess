@@ -1,0 +1,29 @@
+DirectoryIndex home.php index.html index.php
+
+RewriteEngine On
+
+ErrorDocument 404 /404.php
+RewriteRule ^about$ /about.php [L]
+RewriteRule ^about/$ /about.php [L]
+RewriteRule ^projects$ /projects.php [L]
+RewriteRule ^projects/$ /projects.php [L]
+
+RewriteCond %{HTTP_HOST} ^mebel\.moonhub\.ru$
+RewriteCond %{REQUEST_URI} !/mebel/
+RewriteRule ^(.*)$ /mebel/$1 [L]
+
+RewriteEngine On
+RewriteRule ^product/([a-z0-9_-]+)/?$      product.php?pid=$1 [L]
+
+RewriteEngine On
+RewriteRule ^product/([a-z0-9_-]+)/?([a-z0-9_-]+)/?$      product.php?pid=$1&color=$2 [L]
+
+<filesMatch "\.(html|htm|js|css)$">
+  FileETag None
+  <ifModule mod_headers.c>
+     Header unset ETag
+     Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+     Header set Pragma "no-cache"
+     Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+  </ifModule>
+</filesMatch>

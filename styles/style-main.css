@@ -1,0 +1,168 @@
+@font-face {
+  font-family: Main;
+  src: url(font-ubuntu.ttf) format("opentype");
+  color: black;
+}
+@font-face {
+  font-family: Logo;
+  src: url(font-intro.otf) format("opentype");
+  color: black;
+}
+@font-face {
+  font-family: Title;
+  src: url(font-comfortaa.ttf) format("opentype");
+  color: black;
+}
+
+body {
+	font-family: Main; 
+  background: linear-gradient(125deg, #dad7b6 0%, #d1bd8f 100%);
+	opacity: 1;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	text-align: center;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+	position: fixed;
+	top: 60px;
+	margin: 60px;
+	display: none;
+}
+::-webkit-scrollbar-track {
+    background: #B3B3B3; 
+}
+::-webkit-scrollbar-thumb {
+  background-color: #808080;
+	width: 10px;
+	margin: 0 auto;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #636363;
+}
+
+button {
+  background: 0;
+  border: 0;
+}
+button:focus {
+  outline: none;
+}
+a {
+  color: #454e2d;
+  text-decoration: underline wavy 2px #554f4444;
+  /* cursor: none; */
+}
+a:hover {
+  color: #4f5b2e;
+  text-decoration: underline wavy 2px #554f44aa;
+  /* cursor: none; */
+}
+::selection {
+  background: #6B6B6B;
+  color: #ffffff;
+}
+::-moz-selection {
+  background: #6B6B6B;
+  color: #ffffff;
+}
+p {
+  margin: 0;
+}
+/*
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------ Главная страница --------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*/
+.logo {
+  position: absolute;
+  right: 0%;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  opacity: 0.35;
+  background: url(../images/logos/logo-3d.svg) no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+  transition: bottom 1s;
+}
+.logo.loaded {
+  bottom: 0%;
+}
+
+h {
+  color: #554f44;
+}
+
+.content {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  color: #554f44a8;
+  position: absolute;
+  top: 75%; left: 50%;
+  width: 80%;
+  max-width: 650px;
+  opacity: 0;
+  text-align: left;
+  transform: skew(0deg, 5deg) translate(-50%, -50%);
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+  z-index: 2;
+}
+.content.loaded {
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+  transform: skew(0deg, 0deg) translate(-50%, -50%);
+}
+
+.uppertitle {
+  font-size: 2em;
+}
+.title {
+  position: relative;
+  font-size: 3em;
+  padding: 0 0 0.5em 0;
+}
+
+.undertitle {
+  font-size: 1.75em;
+}
+
+.links-button {
+  display: block;
+  font-size: 1.75em;
+  margin: 0.15em 0 0 0.25em;
+  padding: 0px 0px 0px 1.25em;
+}
+
+.links-button.telegram {
+  background: left / 1em no-repeat url("../images/icon-telegram.png");
+}
+.links-button.mail {
+  background: left / 1em no-repeat url("../images/icon-mail.png");
+}
+.links-button.github {
+  background: left / 1em no-repeat url("../images/icon-github.png");
+}
+
+.languages {
+  padding: 2em 0 0 0;
+}
+.lang-button {
+  display: inline-block;
+  margin: 0 0.5em 0 0;
+  padding: 0 0 0.25em 0;
+  font-size: 1.5em;
+}
+.lang-button:hover {
+  color: #554f44;
+  text-decoration: underline wavy 2px #554f4444;
+  cursor: pointer;
+}

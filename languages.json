@@ -1,0 +1,17 @@
+[{
+    "en": [{
+        "uppertitle": "Im <h>Artem</h> Yurko.",
+        "title": "<h>Designer</h> and <h>developer</h>, which creates <h>cool things</h>.",
+        "undertitle": "Find me at:"
+    }],
+    "ua": [{
+        "uppertitle": "Я <h>Артем</h> Юрко.",
+        "title": "<h>Дизайнер</h> та <h>розробник</h>, що створює <h>круті речі</h>.",
+        "undertitle": "Шукай мене в:"
+    }],
+    "pl": [{
+        "uppertitle": "Jestem <h>Artem</h> Yurko.",
+        "title": "<h>Projektant</h> i <h>programista</h>, który tworzy <h>fajne rzeczy</h>.",
+        "undertitle": "Znajdz mi w:"
+    }]
+  }]

@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title>lifeless</title>
+	<meta name="description" content="Designer and developer, which creates cool things. My name is Artem and this is my website."> 
+	<meta name="keywords" content="virbound, virtual, bound, lifeless, shirt, developer, web-dev, web-developer, designer, design, development,
+								   вірбаунд, віртуально зв'язані, ліфелес, лайфлес, сорочка, шірт, розробник, девелопер, веб-дев, веб-девелопер, дизайнер, дизайн"> 
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="image" content="https://lifeless.me/images/logos/logo-wide.png">
+	<meta name="og:image" content="https://lifeless.me/images/logos/logo-wide.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://lifeless.me/images/logos/logo-wide.png">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="icon" type="image/png" href="images/logos/favicon.png">
+	<link rel="apple-touch-icon" href="images/logos/favicon.png">
+	<link rel="stylesheet" type="text/css" href="styles/style-animation.css" media="screen" >
+	<link rel="stylesheet" type="text/css" href="styles/style-main.css" media="screen" >
+	<link rel="stylesheet" href="styles/style-mobile.css" media="handheld, only screen and (max-width: 920px), only screen and (max-device-width: 920px)">
+	<meta name="theme-color" content="#dad7b6">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body onload="$('.content').addClass('loaded');$('.logo').addClass('loaded');">
+    <div class="logo"></div>
+    <div class="content">
+        <p class="uppertitle">
+            Im <h>Artem</h> Yurko.
+        </p>
+        <p class="title">
+            <h>Designer</h> and <h>developer</h>, which creates <h>cool things</h>.
+        </p>
+        <p class="links">
+            <div class="undertitle">
+                Find me at:
+            </div>
+            <a href="https://github.com/LifelessShirt" target="_blank">
+                <div class="links-button github">
+                    GitHub
+                </div>
+            </a>
+            <a href="https://t.me/lifeless_blog" target="_blank">
+                <div class="links-button telegram">
+                    Telegram
+                </div>
+            </a>
+        </p>
+        <p class="languages">
+            <div class="lang-button" lang="en">EN</div>
+            <div class="lang-button" lang="ua">UA</div>
+            <div class="lang-button" lang="pl">PL</div>
+        </p>
+    </div>
+</body>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".lang-button").click(function() {
+        $('.content').removeClass('loaded');
+        $('.logo').removeClass('loaded');
+        var selectedLang = $(this).attr("lang");
+        $.getJSON( "languages.json", function( data ) {
+            setTimeout(function() {
+                $(".uppertitle").html(data[0][selectedLang][0].uppertitle);
+                $(".title").html(data[0][selectedLang][0].title);
+                $(".undertitle").html(data[0][selectedLang][0].undertitle);
+                console.log( "Language changed succesfully" );
+                $('.content').addClass('loaded');
+                $('.logo').addClass('loaded');
+            }, 1000);
+        });
+    });
+});
+</script>
