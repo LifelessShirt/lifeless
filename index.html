@@ -53,21 +53,36 @@
 </body>
 
 <script type="text/javascript">
+function setLanguage(locale) {
+    $.getJSON( "languages.json", function( data ) {
+            $(".uppertitle").html(data[0][locale][0].uppertitle);
+            $(".title").html(data[0][locale][0].title);
+            $(".undertitle").html(data[0][locale][0].undertitle);
+            console.log( "Language changed succesfully" );
+    });
+}
+
+var userLanguage = (navigator.language || navigator.userLanguage).split("-", 1); 
+if (userLanguage == 'en') {
+    setLanguage("en");
+} else if (userLanguage == 'uk') {
+    setLanguage("ua");
+} else if (userLanguage == 'pl') {
+    setLanguage("pl");
+} else {
+    setLanguage("en");
+}
+
 $(document).ready(function() {
     $(".lang-button").click(function() {
         $('.content').removeClass('loaded');
         $('.logo').removeClass('loaded');
         var selectedLang = $(this).attr("lang");
-        $.getJSON( "languages.json", function( data ) {
-            setTimeout(function() {
-                $(".uppertitle").html(data[0][selectedLang][0].uppertitle);
-                $(".title").html(data[0][selectedLang][0].title);
-                $(".undertitle").html(data[0][selectedLang][0].undertitle);
-                console.log( "Language changed succesfully" );
-                $('.content').addClass('loaded');
-                $('.logo').addClass('loaded');
-            }, 1000);
-        });
+        setTimeout(function() {
+            setLanguage(selectedLang);
+            $('.content').addClass('loaded');
+            $('.logo').addClass('loaded');
+        }, 1000);
     });
 });
 </script>
