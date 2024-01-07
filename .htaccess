@@ -2,7 +2,6 @@ DirectoryIndex home.php index.html index.php
 
 RewriteEngine On
 
-ErrorDocument 404 /404.php
 RewriteRule ^about$ /about.html [L]
 RewriteRule ^about/$ /about.html [L]
 RewriteRule ^projects$ /projects.html [L]
