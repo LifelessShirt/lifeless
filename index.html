@@ -1,10 +1,11 @@
 <html>
 <head>
+    <!-- This piece of code will set page title, description and keywords -->
     <title>lifeless</title>
 	<meta name="description" content="Designer and developer, which creates cool things. My name is Artem and this is my website."> 
 	<meta name="keywords" content="virbound, virtual, bound, lifeless, shirt, developer, web-dev, web-developer, designer, design, development,
 								   вірбаунд, віртуально зв'язані, ліфелес, лайфлес, сорочка, шірт, розробник, девелопер, веб-дев, веб-девелопер, дизайнер, дизайн"> 
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <!-- This code is responsible for media like favicon, images for social etc. -->
 	<meta name="image" content="https://lifeless.me/images/logos/logo-wide.png">
 	<meta name="og:image" content="https://lifeless.me/images/logos/logo-wide.png">
 	<meta name="twitter:card" content="summary_large_image">
@@ -12,77 +13,43 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="icon" type="image/png" href="images/logos/favicon.png">
 	<link rel="apple-touch-icon" href="images/logos/favicon.png">
-	<link rel="stylesheet" type="text/css" href="styles/style-animation.css?v=1.1" media="screen" >
-	<link rel="stylesheet" type="text/css" href="styles/style-main.css?v=1.1" media="screen" >
-	<link rel="stylesheet" href="styles/style-mobile.css" media="handheld, only screen and (max-width: 920px), only screen and (max-device-width: 920px)">
-	<meta name="theme-color" content="#dad7b6">
-
+    <!-- This code will set styles for desctop version and mobile -->
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+	<link rel="stylesheet" type="text/css" href="styles/style.css?v=1.2" media="screen">
+    <meta name="theme-color" content="#DAD7B6">
+    <meta name="theme-color" content="#DAD7B6" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#3D3C37" media="(prefers-color-scheme: dark)">
+    <!-- JQuery loader -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
-<body onload="$('.content').addClass('loaded');$('.logo').addClass('loaded');">
+<!--JS in "onLoad" will display all website content, without it user will seee nothing -->
+<body onLoad="$('.content').addClass('loaded');$('.logo').addClass('loaded');">
     <div class="logo"></div>
     <div class="content">
-        <p class="uppertitle">
+        <p class="uppertitle wrapper">
             Im <h>Artem</h> Yurko.
         </p>
-        <p class="title">
+        <p class="title wrapper">
             <h>Designer</h> and <h>developer</h>, which creates <h>cool things</h>.
         </p>
-        <div class="links">
+        <div class="links wrapper">
             <p class="undertitle">
                 Find me at:
-            </div>
-            <a href="https://github.com/LifelessShirt" target="_blank">
-                <div class="links-button github">
-                    GitHub
-                </div>
-            </a>
-            <a href="https://t.me/lifeless_blog" target="_blank">
-                <div class="links-button telegram">
-                    Telegram
-                </div>
-            </a>
-        </p>
-        <div class="languages">
-            <div class="lang-button" lang="en">EN</div>
-            <div class="lang-button" lang="ua">UA</div>
-            <div class="lang-button" lang="pl">PL</div>
-        </p>
+            </p>
+            <a href="https://github.com/LifelessShirt" class="links-button github" target="_blank">GitHub</a>
+            <br>
+            <a href="https://t.me/lifeless_blog" class="links-button telegram" target="_blank">Telegram</a>
+        </div>
+        <div class="languages wrapper">
+            <!-- Buttons for language change. Function is attached below at end of page.-->
+            <button class="lang-button" lang="en">EN</button>
+            <button class="lang-button" lang="ua">UA</button>
+            <button class="lang-button" lang="pl">PL</button>
+        </div>
     </div>
 </body>
 
-<script type="text/javascript">
-function setLanguage(locale) {
-    $.getJSON( "languages.json", function( data ) {
-            $(".uppertitle").html(data[0][locale][0].uppertitle);
-            $(".title").html(data[0][locale][0].title);
-            $(".undertitle").html(data[0][locale][0].undertitle);
-            console.log( "Language changed succesfully" );
-    });
-}
-
-var userLanguage = (navigator.language || navigator.userLanguage).split("-", 1); 
-if (userLanguage == 'en') {
-    setLanguage("en");
-} else if (userLanguage == 'uk') {
-    setLanguage("ua");
-} else if (userLanguage == 'pl') {
-    setLanguage("pl");
-} else {
-    setLanguage("en");
-}
-
-$(document).ready(function() {
-    $(".lang-button").click(function() {
-        $('.content').removeClass('loaded');
-        $('.logo').removeClass('loaded');
-        var selectedLang = $(this).attr("lang");
-        setTimeout(function() {
-            setLanguage(selectedLang);
-            $('.content').addClass('loaded');
-            $('.logo').addClass('loaded');
-        }, 1000);
-    });
-});
+<!-- Script below will change website language to user language automatically or by pressing an buttons above -->
+<script src="languages.js" type="text/javascript">
 </script>

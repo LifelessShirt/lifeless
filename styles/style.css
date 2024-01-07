@@ -3,16 +3,6 @@
   src: url(font-ubuntu.ttf) format("opentype");
   color: black;
 }
-@font-face {
-  font-family: Logo;
-  src: url(font-intro.otf) format("opentype");
-  color: black;
-}
-@font-face {
-  font-family: Title;
-  src: url(font-comfortaa.ttf) format("opentype");
-  color: black;
-}
 
 body {
 	font-family: Main; 
@@ -75,7 +65,7 @@ p {
 }
 /*
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------- Главная страница --------------------------------------------------------------------------
+--------------------------------------------------------------------------- Main page ------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 */
 .logo {
@@ -103,12 +93,16 @@ h {
   overflow-y: hidden;
   color: #554f44a8;
   position: absolute;
-  top: 75%; left: 50%;
-  width: 80%;
-  max-width: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 10%; left: 0%;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   text-align: left;
-  transform: skew(0deg, 5deg) translate(-50%, -50%);
+  transform: skew(0deg, 5deg);
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
   -o-transition: all 1s;
@@ -117,18 +111,23 @@ h {
 }
 .content.loaded {
   opacity: 1;
-  top: 50%;
-  left: 50%;
-  transform: skew(0deg, 0deg) translate(-50%, -50%);
+  top: 0%;
+  transform: skew(0deg, 0deg);
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 650px;
 }
 
 .uppertitle {
   font-size: 2em;
 }
+
 .title {
   position: relative;
   font-size: 3em;
-  padding: 0 0 0.5em 0;
+  padding-bottom: 0.5em;
 }
 
 .undertitle {
@@ -136,7 +135,7 @@ h {
 }
 
 .links-button {
-  display: block;
+  display: inline-block;
   font-size: 1.75em;
   margin: 0.15em 0 0 0.25em;
   padding: 0px 0px 0px 1.25em;
@@ -153,13 +152,15 @@ h {
 }
 
 .languages {
-  padding: 2em 0 0 0;
+  padding-top: 2em;
 }
 .lang-button {
+	font-family: Main; 
   display: inline-block;
   margin: 0 0.5em 0 0;
   padding: 0 0 0.25em 0;
   font-size: 1.5em;
+  color: #554f44a8;
 }
 .lang-button:hover {
   color: #554f44;
