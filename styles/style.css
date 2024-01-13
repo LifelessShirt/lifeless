@@ -4,9 +4,17 @@
   color: black;
 }
 
+:root {
+  --main-color: #554f44;
+  --main-color-transparent: #554f44a8;
+  --link-color: #454E2D;
+  --link-color-transparent: #454E2DA8;
+  --background-gradient: linear-gradient(125deg, #dad7b6 0%, #d1bd8f 100%);
+}
+
 body {
 	font-family: Main; 
-  background: linear-gradient(125deg, #dad7b6 0%, #d1bd8f 100%);
+  background: var(--background-gradient);
 	opacity: 1;
 	margin: 0;
 	padding: 0;
@@ -43,13 +51,13 @@ button:focus {
   outline: none;
 }
 a {
-  color: #454e2d;
-  text-decoration: underline wavy 2px #554f4444;
+  color: var(--link-color);
+  text-decoration: underline wavy 2px var(--link-color-transparent);
   /* cursor: none; */
 }
 a:hover {
-  color: #4f5b2e;
-  text-decoration: underline wavy 2px #554f44aa;
+  color: var(--link-color);
+  text-decoration: underline wavy 2px var(--link-color);
   /* cursor: none; */
 }
 ::selection {
@@ -85,13 +93,13 @@ p {
 }
 
 h {
-  color: #554f44;
+  color: var(--main-color);
 }
 
 .content {
   overflow-x: hidden;
   overflow-y: hidden;
-  color: #554f44a8;
+  color: var(--main-color-transparent);
   position: absolute;
   display: flex;
   justify-content: center;
@@ -135,20 +143,34 @@ h {
 }
 
 .links-button {
+  position: relative;
   display: inline-block;
   font-size: 1.75em;
   margin: 0.15em 0 0 0.25em;
   padding: 0px 0px 0px 1.25em;
 }
+.links-button::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 2.4px;
+  width: 1em;
+  height: 1em;
+  background: var(--link-color);
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
 
-.links-button.telegram {
-  background: left / 1em no-repeat url("../images/icon-telegram.png");
+.links-button.telegram::after {
+  mask-image: url("../images/icon-telegram.png");
+  -webkit-mask-image: url("../images/icon-telegram.png");
 }
-.links-button.mail {
-  background: left / 1em no-repeat url("../images/icon-mail.png");
+.links-button.mail::after {
+  mask-image: url("../images/icon-mail.png");
+  -webkit-mask-image: url("../images/icon-mail.png");
 }
-.links-button.github {
-  background: left / 1em no-repeat url("../images/icon-github.png");
+.links-button.github::after {
+  mask-image: url("../images/icon-github.png");
+  -webkit-mask-image: url("../images/icon-github.png");
 }
 
 .languages {
@@ -160,11 +182,11 @@ h {
   margin: 0 0.5em 0 0;
   padding: 0 0 0.25em 0;
   font-size: 1.5em;
-  color: #554f44a8;
+  color: var(--main-color-transparent);
 }
 .lang-button:hover {
-  color: #554f44;
-  text-decoration: underline wavy 2px #554f4444;
+  color: var(--main-color);
+  text-decoration: underline wavy 2px var(--main-color-transparent);
   cursor: pointer;
 }
 
@@ -177,11 +199,12 @@ h {
     background: #ffffff47;
     color: #6B6B6B;
   }
-  body {
-    background: linear-gradient(125deg, #3f3f3a 0%, #37342c 100%);
-  }
-  .content {
-    filter: brightness(3);
+  :root {
+    --main-color: #FFEDCC;
+    --main-color-transparent: #FFEDCCa8;
+    --link-color: #CFEA87;
+    --link-color-transparent: #CFEA87A8;
+    --background-gradient: linear-gradient(125deg, #3f3f3a 0%, #37342c 100%);
   }
   .logo {
     opacity: 0.1;
