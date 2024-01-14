@@ -4,10 +4,15 @@
         "title": "<h>Designer</h> and <h>developer</h>, which creates <h>cool things</h>.",
         "undertitle": "Find me at:"
     }],
-    "ua": [{
+    "uk": [{
         "uppertitle": "Я <h>Артем</h> Юрко.",
         "title": "<h>Дизайнер</h> та <h>розробник</h>, що створює <h>круті речі</h>.",
         "undertitle": "Шукай мене в:"
+    }],
+    "ru": [{
+        "uppertitle": "Я <h>Артём</h> Юрко.",
+        "title": "<h>Дизайнер</h> и <h>разработчик</h>, создающий <h>крутые штуки</h>.",
+        "undertitle": "Ищи меня в:"
     }],
     "pl": [{
         "uppertitle": "Jestem <h>Artem</h> Yurko.",
