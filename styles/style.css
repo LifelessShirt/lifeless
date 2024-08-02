@@ -194,6 +194,21 @@ h {
   cursor: pointer;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  text-align: left;
+  transform: translateX(-50%);
+  padding: 20px;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 650px;
+  color: var(--main-color-transparent);
+  font-size: 1em;
+  z-index: 2;
+}
+
 @media (max-width: 800px) {
   .content {
     height: 90%;
@@ -210,6 +225,10 @@ h {
   
   .undertitle {
     font-size: 1.5em;
+  }
+  .footer {
+    font-size: 0.9em;
+    text-align: center;
   }
 }
 
